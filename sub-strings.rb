@@ -10,12 +10,16 @@ def substrings(word,array)
     
     occurences = Hash.new(0)
     
-    word.downcase!
-    
-    array.each do |element|
-        
-        if word.include? element
-            occurences[element] += 1
+    word = word.downcase.split(" ")
+
+    word.each do |word|
+
+        array.each do |element|
+            
+            if word.include? element
+                occurences[element] += 1
+            end
+
         end
 
     end
@@ -24,4 +28,4 @@ def substrings(word,array)
 
 end
 
-puts substrings("below howdy", dictionary)
+puts substrings("Howdy partner, sit down! How's it going?", dictionary)
